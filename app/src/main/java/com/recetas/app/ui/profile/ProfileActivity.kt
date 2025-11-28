@@ -1,12 +1,20 @@
-package com.recetas.app
+package com.recetas.app.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.recetas.app.ui.add.AddRecipeActivity
+import com.recetas.app.ui.profile.EditProfileActivity
+import com.recetas.app.R
+import com.recetas.app.ui.search.SearchActivity
 import com.recetas.app.databinding.ActivityProfileBinding
-import android.widget.TextView
+import com.recetas.app.ui.auth.LoginActivity
+import com.recetas.app.ui.favorites.FavoritesActivity
+import com.recetas.app.ui.home.MainActivity
+import com.recetas.app.ui.home.RecipeViewModel
 
 class ProfileActivity : AppCompatActivity() {
 

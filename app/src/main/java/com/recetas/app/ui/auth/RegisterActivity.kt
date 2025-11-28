@@ -1,10 +1,11 @@
-package com.recetas.app
+package com.recetas.app.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.recetas.app.databinding.ActivityRegisterBinding
+import com.recetas.app.ui.home.MainActivity
 
 class RegisterActivity : AppCompatActivity() {
 

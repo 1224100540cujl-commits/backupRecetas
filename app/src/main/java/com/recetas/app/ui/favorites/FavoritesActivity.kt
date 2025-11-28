@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.favorites
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.recetas.app.ui.add.AddRecipeActivity
+import com.recetas.app.ui.profile.ProfileActivity
+import com.recetas.app.R
+import com.recetas.app.ui.search.SearchActivity
 import com.recetas.app.adapters.FavoriteAdapter
 import com.recetas.app.databinding.ActivityFavoritesBinding
+import com.recetas.app.ui.detail.DetailActivity
+import com.recetas.app.ui.home.MainActivity
+import com.recetas.app.ui.home.RecipeViewModel
 
 class FavoritesActivity : AppCompatActivity() {
 

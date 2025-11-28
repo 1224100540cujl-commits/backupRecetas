@@ -1,5 +1,6 @@
-package com.recetas.app
+package com.recetas.app.ui.add
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -7,15 +8,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 import com.recetas.app.databinding.ActivityEditRecipeBinding
+import com.recetas.app.ui.home.MainActivity
+import com.recetas.app.ui.home.RecipeViewModel
 
 class EditRecipeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditRecipeBinding
     private lateinit var recipeViewModel: RecipeViewModel
     private var recipeId: Int = 0
-    private var currentRecipe: Recipe? = null
+    private var currentRecipe: Receta? = null
     private var selectedEmoji = "🍽️"
 
     private val categories = listOf("Mexicana", "Italiana", "Japonesa", "Americana", "Ensaladas", "Postres", "Sopas", "Bebidas")
@@ -81,12 +84,12 @@ class EditRecipeActivity : AppCompatActivity() {
     }
 
     private fun setupCategoryDropdown() {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, categories)
+        val adapter = ArrayAdapter(this, R.layout.simple_dropdown_item_1line, categories)
         binding.recipeCategoryInput.setAdapter(adapter)
     }
 
     private fun setupDifficultyDropdown() {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, difficulties)
+        val adapter = ArrayAdapter(this, R.layout.simple_dropdown_item_1line, difficulties)
         binding.recipeDifficultyInput.setAdapter(adapter)
     }
 

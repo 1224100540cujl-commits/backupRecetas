@@ -7,14 +7,14 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.recetas.app.R
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 
 class FavoriteAdapter(
-    private val onItemClick: (Recipe) -> Unit,
-    private val onRemoveFavorite: (Recipe) -> Unit
+    private val onItemClick: (Receta) -> Unit,
+    private val onRemoveFavorite: (Receta) -> Unit
 ) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
-    private var recipes = emptyList<Recipe>()
+    private var recipes = emptyList<Receta>()
 
     class FavoriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val emojiTextView: TextView = itemView.findViewById(R.id.favoriteRecipeEmoji)
@@ -51,7 +51,7 @@ class FavoriteAdapter(
 
     override fun getItemCount() = recipes.size
 
-    fun setRecipes(recipes: List<Recipe>) {
+    fun setRecipes(recipes: List<Receta>) {
         this.recipes = recipes
         notifyDataSetChanged()
     }

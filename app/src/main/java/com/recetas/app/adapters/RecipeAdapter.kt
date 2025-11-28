@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.recetas.app.R
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 
 class RecipeAdapter(
-    private val onItemClick: (Recipe) -> Unit
+    private val onItemClick: (Receta) -> Unit
 ) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
-    private var recipes = emptyList<Recipe>()
+    private var recipes = emptyList<Receta>()
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.recipeNameTextView)
@@ -42,7 +42,7 @@ class RecipeAdapter(
 
     override fun getItemCount() = recipes.size
 
-    fun setRecipes(recipes: List<Recipe>) {
+    fun setRecipes(recipes: List<Receta>) {
         this.recipes = recipes
         notifyDataSetChanged()
     }

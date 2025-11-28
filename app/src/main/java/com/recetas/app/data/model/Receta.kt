@@ -1,11 +1,11 @@
-package com.recetas.app.database
+package com.recetas.app.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "recipes")
-data class Recipe(
+data class Receta(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 

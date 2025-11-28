@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.recetas.app.adapters.RecipeAdapter
 import com.recetas.app.databinding.ActivityCategoriesBinding
+import com.recetas.app.ui.detail.DetailActivity
 
 class CategoriesActivity : AppCompatActivity() {
 

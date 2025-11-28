@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.search
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,15 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.recetas.app.ui.add.AddRecipeActivity
+import com.recetas.app.R
 import com.recetas.app.adapters.RecipeAdapter
 import com.recetas.app.databinding.ActivitySearchBinding
+import com.recetas.app.ui.detail.DetailActivity
+import com.recetas.app.ui.favorites.FavoritesActivity
+import com.recetas.app.ui.home.MainActivity
+import com.recetas.app.ui.home.RecipeViewModel
+import com.recetas.app.ui.profile.ProfileActivity
 
 class SearchActivity : AppCompatActivity() {
 

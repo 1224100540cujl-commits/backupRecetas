@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.profile
 
 import android.os.Bundle
 import android.widget.Toast

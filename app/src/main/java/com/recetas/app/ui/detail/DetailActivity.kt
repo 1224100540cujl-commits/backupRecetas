@@ -1,21 +1,25 @@
-package com.recetas.app
+package com.recetas.app.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
+import com.recetas.app.ui.add.EditRecipeActivity
+import com.recetas.app.ui.shopping.ShoppingListActivity
 import com.recetas.app.adapters.RecipeDetailPagerAdapter
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 import com.recetas.app.databinding.ActivityDetailBinding
+import com.recetas.app.ui.home.RecipeViewModel
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
     private lateinit var recipeViewModel: RecipeViewModel
     private var recipeId: Int = 0
-    private var currentRecipe: Recipe? = null
+    private var currentRecipe: Receta? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,8 +91,8 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupViewPager(ingredients: String, instructions: String) {
         // Mostrar ViewPager y TabLayout
-        binding.viewPager.visibility = android.view.View.VISIBLE
-        binding.tabLayout.visibility = android.view.View.VISIBLE
+        binding.viewPager.visibility = View.VISIBLE
+        binding.tabLayout.visibility = View.VISIBLE
 
         // Convertir ingredientes a lista
         val ingredientsList = ingredients.split(",").map { it.trim() }

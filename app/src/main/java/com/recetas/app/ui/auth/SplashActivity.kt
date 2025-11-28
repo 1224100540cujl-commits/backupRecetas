@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.recetas.app.databinding.ActivitySplashBinding
+import com.recetas.app.ui.home.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

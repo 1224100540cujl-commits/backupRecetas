@@ -1,5 +1,6 @@
-package com.recetas.app
+package com.recetas.app.ui.add
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -7,8 +8,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 import com.recetas.app.databinding.ActivityAddRecipeBinding
+import com.recetas.app.ui.favorites.FavoritesActivity
+import com.recetas.app.ui.home.MainActivity
+import com.recetas.app.ui.home.RecipeViewModel
+import com.recetas.app.ui.profile.ProfileActivity
+import com.recetas.app.ui.search.SearchActivity
 
 class AddRecipeActivity : AppCompatActivity() {
 
@@ -52,12 +58,12 @@ class AddRecipeActivity : AppCompatActivity() {
     }
 
     private fun setupCategoryDropdown() {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, categories)
+        val adapter = ArrayAdapter(this, R.layout.simple_dropdown_item_1line, categories)
         binding.recipeCategoryInput.setAdapter(adapter)
     }
 
     private fun setupDifficultyDropdown() {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, difficulties)
+        val adapter = ArrayAdapter(this, R.layout.simple_dropdown_item_1line, difficulties)
         binding.recipeDifficultyInput.setAdapter(adapter)
     }
 
@@ -123,7 +129,7 @@ class AddRecipeActivity : AppCompatActivity() {
         }
 
         // Crear la receta
-        val newRecipe = Recipe(
+        val newRecipe = Receta(
             name = name,
             category = category,
             time = time,
@@ -148,27 +154,27 @@ class AddRecipeActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigation() {
-        binding.bottomNavigation.selectedItemId = R.id.nav_add
+        binding.bottomNavigation.selectedItemId = com.recetas.app.R.id.nav_add
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
+                com.recetas.app.R.id.nav_home -> {
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                     true
                 }
-                R.id.nav_search -> {
+                com.recetas.app.R.id.nav_search -> {
                     startActivity(Intent(this, SearchActivity::class.java))
                     finish()
                     true
                 }
-                R.id.nav_add -> true
-                R.id.nav_favorites -> {
+                com.recetas.app.R.id.nav_add -> true
+                com.recetas.app.R.id.nav_favorites -> {
                     startActivity(Intent(this, FavoritesActivity::class.java))
                     finish()
                     true
                 }
-                R.id.nav_profile -> {
+                com.recetas.app.R.id.nav_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
                     finish()
                     true

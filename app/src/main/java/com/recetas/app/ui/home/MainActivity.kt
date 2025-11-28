@@ -1,4 +1,4 @@
-package com.recetas.app
+package com.recetas.app.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.chip.Chip
+import com.recetas.app.ui.add.AddRecipeActivity
+import com.recetas.app.ui.home.CategoriesActivity
+import com.recetas.app.ui.detail.DetailActivity
+import com.recetas.app.ui.favorites.FavoritesActivity
+import com.recetas.app.ui.profile.ProfileActivity
+import com.recetas.app.R
+import com.recetas.app.ui.search.SearchActivity
 import com.recetas.app.adapters.RecipeAdapter
-import com.recetas.app.database.Recipe
+import com.recetas.app.data.model.Receta
 import com.recetas.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -126,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         recipeViewModel.allRecipes.observe(this) { recipes ->
             if (recipes.isEmpty()) {
                 val sampleRecipes = listOf(
-                    Recipe(
+                    Receta(
                         name = "Tacos al Pastor",
                         category = "Mexicana",
                         time = "30 min",
@@ -136,7 +143,7 @@ class MainActivity : AppCompatActivity() {
                         instructions = "1. Marinar la carne con especias\n2. Asar la carne hasta dorar\n3. Calentar las tortillas\n4. Servir con piña, cilantro y cebolla",
                         imageUrl = "🌮"
                     ),
-                    Recipe(
+                    Receta(
                         name = "Pasta Carbonara",
                         category = "Italiana",
                         time = "20 min",
@@ -146,7 +153,7 @@ class MainActivity : AppCompatActivity() {
                         instructions = "1. Cocinar la pasta al dente\n2. Freír el tocino hasta crujiente\n3. Mezclar huevos con queso\n4. Combinar todo caliente",
                         imageUrl = "🍝"
                     ),
-                    Recipe(
+                    Receta(
                         name = "Sushi Rolls",
                         category = "Japonesa",
                         time = "45 min",
@@ -156,7 +163,7 @@ class MainActivity : AppCompatActivity() {
                         instructions = "1. Cocinar y enfriar el arroz\n2. Extender nori sobre esterilla\n3. Agregar arroz e ingredientes\n4. Enrollar firmemente y cortar",
                         imageUrl = "🍣"
                     ),
-                    Recipe(
+                    Receta(
                         name = "Hamburguesa Casera",
                         category = "Americana",
                         time = "25 min",
@@ -166,7 +173,7 @@ class MainActivity : AppCompatActivity() {
                         instructions = "1. Formar hamburguesas de 150g\n2. Asar a la parrilla 4 min por lado\n3. Tostar el pan\n4. Armar con vegetales y salsas",
                         imageUrl = "🍔"
                     ),
-                    Recipe(
+                    Receta(
                         name = "Ensalada César",
                         category = "Ensaladas",
                         time = "15 min",
@@ -176,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                         instructions = "1. Lavar y cortar lechuga\n2. Cocinar y rebanar pollo\n3. Mezclar todos los ingredientes\n4. Agregar aderezo al gusto",
                         imageUrl = "🥗"
                     ),
-                    Recipe(
+                    Receta(
                         name = "Pizza Margarita",
                         category = "Italiana",
                         time = "40 min",

@@ -1,11 +1,26 @@
-package com.recetas.app.database
+package com.recetas.app.data.local.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.recetas.app.data.local.dao.RecipeDao
+import com.recetas.app.data.model.*
 
-@Database(entities = [Recipe::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+        Usuario::class,
+        Receta::class,
+        Ingrediente::class,
+        Instruccion::class,
+        ListaCompras::class,
+        ItemListaCompras::class,
+        Etiqueta::class,
+        RecetaEtiqueta::class
+    ],
+    version = 2, // Aumentar versión
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun recipeDao(): RecipeDao
 
@@ -18,8 +33,10 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "recipe_database"
-                ).build()
+                    "recetas_database"
+                )
+                    .fallbackToDestructiveMigration() // Para desarrollo
+                    .build()
                 INSTANCE = instance
                 instance
             }

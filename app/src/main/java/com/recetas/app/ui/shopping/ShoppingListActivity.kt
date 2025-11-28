@@ -1,7 +1,8 @@
-package com.recetas.app
+package com.recetas.app.ui.shopping
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -10,7 +11,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.recetas.app.R
 import com.recetas.app.databinding.ActivityShoppingListBinding
+import com.recetas.app.ui.home.RecipeViewModel
 
 class ShoppingListActivity : AppCompatActivity() {
 
@@ -110,7 +113,7 @@ class ShoppingListActivity : AppCompatActivity() {
         binding.ingredientsContainer.addView(checkboxLayout)
 
         // Agregar línea divisoria
-        val divider = android.view.View(this).apply {
+        val divider = View(this).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 1
@@ -140,7 +143,7 @@ class ShoppingListActivity : AppCompatActivity() {
                 }
 
                 val shareIntent = Intent().apply {
-                    action = Intent.ACTION_SEND
+                    action = Intent.ACTION_SEND  // ⬅️ Asegúrate que Intent esté importado
                     putExtra(Intent.EXTRA_TEXT, shareText)
                     type = "text/plain"
                 }
