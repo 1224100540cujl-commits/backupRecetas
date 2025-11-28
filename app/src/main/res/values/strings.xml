@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">RecetApp</string>
+    <string name="home">Inicio</string>
+    <string name="search">Buscar</string>
+    <string name="add">Agregar</string>
+    <string name="favorites">Favoritos</string>
+    <string name="profile">Perfil</string>
+    <string name="search_hint">Buscar recetas, ingredientes…</string>
+    <string name="what_cooking_today">¿Qué vamos a cocinar hoy?</string>
+    <string name="categories">Categorías</string>
+    <string name="popular_recipes">Recetas Populares</string>
+    <string name="time">Tiempo</string>
+    <string name="servings">Porciones</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="preparation">Preparación</string>
+    <string name="nutrition">Nutrición</string>
+    <string name="shopping_list">Lista de Compras</string>
+    <string name="save_recipe">Guardar Receta</string>
+    <string name="recipe_name">Nombre de la receta</string>
+    <string name="recipe_name_hint">Ej: Tacos al pastor</string>
+    <string name="select_category">Seleccionar categoría</string>
+</resources>
